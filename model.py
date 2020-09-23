@@ -8,15 +8,15 @@ class TextMatcher:
     class Tokenizer:
         nlp = en_core_web_lg.load()
 
-        def __call__(self, text) -> list:
+        def __call__(self, text: str) -> list:
             return [
                 token.lemma_ for token in self.nlp(text)
                 if not token.is_stop and not token.is_punct
             ]
 
-    def __init__(self, train_data: dict, ngram_range=(1, 3), max_features=10000):
+    def __init__(self, train_data: dict, ngram_range=(1, 3), max_features=100000):
         self.lookup = {
-            k: '. '.join(itm for itm in v.values())
+            k: '; '.join(itm for itm in v.values())
             for k, v in train_data.items()
         }
         self.tfidf = TfidfVectorizer(
