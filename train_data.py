@@ -83,7 +83,7 @@ archetypes = {
         "Description": "The Magician is also known as:The visionary, catalyst, inventor, charismatic leader, shaman, healer, medicine man.",
     },
     "The Ruler": {
-        "Motto": "Power isn’t everything, it’s the only thing.",
+        "Motto": "Power is everything.",
         "Desire": "control",
         "Goal": "create a prosperous, successful family or community",
         "Strategy": "exercise power",

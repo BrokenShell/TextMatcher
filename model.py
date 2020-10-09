@@ -14,11 +14,12 @@ class TextMatcher:
                 if not token.is_stop and not token.is_punct
             ]
 
-    def __init__(self, train_data: dict, ngram_range=(1, 3), max_features=100000):
+    def __init__(self, train_data: dict, ngram_range=(1, 1), max_features=1000):
         self.lookup = {
             k: '; '.join(itm for itm in v.values())
             for k, v in train_data.items()
         }
+        self.name_index = list(self.lookup.keys())
         self.tfidf = TfidfVectorizer(
             ngram_range=ngram_range,
             tokenizer=self.Tokenizer(),
@@ -37,17 +38,6 @@ class TextMatcher:
     def __call__(self, user_input: str) -> str:
         dist, idx = self._worker(user_input)
         if dist != self.baseline:
-            return list(self.lookup.keys())[int(idx)]
+            return self.name_index[int(idx)]
         else:
             return 'No Match'
-
-
-if __name__ == '__main__':
-    from train_data import archetypes
-    from test_data import biographies
-
-    print()
-    match = TextMatcher(archetypes)
-    for name, description in biographies.items():
-        print(f"{name}: {match(description)}")
-    print()
