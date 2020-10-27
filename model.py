@@ -4,8 +4,10 @@ import en_core_web_lg
 
 
 class TextMatcher:
+    """ Generic NLP Text Matching Model """
 
     class Tokenizer:
+        """ Standard SpaCy Tokenizer """
         nlp = en_core_web_lg.load()
 
         def __call__(self, text: str) -> list:
@@ -15,6 +17,7 @@ class TextMatcher:
             ]
 
     def __init__(self, train_data: dict, ngram_range=(1, 1), max_features=1000):
+        """ Model training on live data at init """
         self.lookup = {
             k: '; '.join(itm for itm in v.values())
             for k, v in train_data.items()
@@ -32,10 +35,12 @@ class TextMatcher:
         self.baseline, _ = self._worker('')
 
     def _worker(self, user_input: str):
+        """ Prediction worker method - internal only """
         vec = self.tfidf.transform([user_input]).todense()
         return (itm[0][0] for itm in self.knn.kneighbors(vec))
 
     def __call__(self, user_input: str) -> str:
+        """ Callable object for making predictions """
         dist, idx = self._worker(user_input)
         if dist != self.baseline:
             return self.name_index[int(idx)]

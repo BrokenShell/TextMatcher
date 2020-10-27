@@ -3,6 +3,7 @@ from train_data import archetypes
 
 
 def matcher():
+    """ Interactive text matching script """
     match = TextMatcher(archetypes, ngram_range=(1, 3), max_features=25000)
 
     def worker():
@@ -20,5 +21,5 @@ def matcher():
 
 if __name__ == '__main__':
     print("\nInteractive Archetypal Classification Example")
-    print("Provide a description for me to match...")
+    print("Provide a description of someone for me to match...")
     matcher()
