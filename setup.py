@@ -12,11 +12,11 @@ dev_status = {
 }
 
 setup(
-    name="TextMatcher",
+    name="NLPTextMatcher",
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
-    packages=["TextMatcher"],
-    version="0.1.5",
+    packages=["NLPTextMatcher"],
+    version="0.2.0",
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",

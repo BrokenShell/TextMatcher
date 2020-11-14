@@ -2,8 +2,8 @@
 woefully inadequate for real-world work, and only provided here as inspiration.
 Good training data would be five times larger, great training data would be
 ten times larger or more. """
-from TextMatcher.model import TextMatcher
-from TextMatcher.train_data import archetypes
+from NLPTextMatcher.model import TextMatcher
+from NLPTextMatcher.train_data import archetypes
 
 __all__ = ("matcher",)
 

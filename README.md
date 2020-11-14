@@ -1,7 +1,7 @@
-# TextMatcher
+# NLPTextMatcher
 Author: Robert Sharp
 
-### TextMatcher/model.py
+### NLPTextMatcher/model.py
 
 #### TextMatcher: Primary Interface
 Experimental machine learning model featuring natural language processing 
@@ -32,18 +32,18 @@ SpaCy library.
 - @param text: String of text to be tokenized 
 - @return: List of SpaCy tokens
 
-### TextMatcher/interactive_example.py
+### NLPTextMatcher/interactive_example.py
 An example that classifies user input by their nearest Carl Jung Archetype.
 Execute this script as main for an interactive example.
 
-### TextMatcher/celeb_example.py
+### NLPTextMatcher/celeb_example.py
 - `celeb_classification()`
 An example that classifies celebrities by their nearest Carl Jung Archetype.
 
-### TextMatcher/test_data.py
+### NLPTextMatcher/test_data.py
 Dictionary of biographies to by used in the celebrity classification example.
 
-### TextMatcher/train_data.py
+### NLPTextMatcher/train_data.py
 Carl Jung Archetype training data for the examples.
 - The Hero
 - The Caregiver
