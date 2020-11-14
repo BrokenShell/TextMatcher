@@ -84,18 +84,11 @@ archetypes = {
     },
     "The Ruler": {
         "Motto": "Power is everything.",
-        "Desire": "control",
+        "Desire": "be the leader of people and control from the top down",
         "Goal": "create a prosperous, successful family or community",
-        "Strategy": "exercise power",
+        "Strategy": "exercise power over others",
         "Weakness": "being authoritarian, unable to delegate",
         "Talent": "responsibility, leadership",
         "Description": "The Ruler is also known as: The boss, leader, aristocrat, king, queen, politician, role model, manager or administrator.",
     },
-}
-
-directions = {
-    'North': {'Text': "north northern northerly"},
-    'South': {'Text': "south southern southerly"},
-    'East': {'Text': "east eastern easterly"},
-    'West': {'Text': "west western westerly"},
 }
