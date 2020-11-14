@@ -16,7 +16,7 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     packages=["NLPTextMatcher"],
-    version="0.2.0",
+    version="0.2.1",
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",
