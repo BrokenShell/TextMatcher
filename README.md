@@ -41,7 +41,7 @@ Execute this script as main for an interactive example.
 An example that classifies celebrities by their nearest Carl Jung Archetype.
 
 ### NLPTextMatcher/test_data.py
-Dictionary of biographies to be used for the celebrity classification example.
+Dictionary of biographies, to be used for the celebrity classification example.
 
 ### NLPTextMatcher/train_data.py
 Carl Jung Archetype training data for the examples.
