@@ -16,11 +16,16 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     packages=["NLPTextMatcher"],
-    version="0.2.2",
+    version="0.2.4",
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Free for non-commercial use",
+    url="https://github.com/BrokenShell/TextMatcher",
+    install_requires=[
+        "scikit-learn~=0.23.2",
+        "spacy~=2.3.1",
+    ],
     classifiers=[
         dev_status["Beta"],
         "Programming Language :: Python :: 3.8",
