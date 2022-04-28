@@ -4,11 +4,22 @@ classification of arbitrary text. TextMatcher creates a callable object for
 making predictions. The instance is trained at initialization and the callable
 object is reusable for the same training data. TextMatcher uses a combination
 of SpaCy, TfidfVectorizer and NearestNeighbors. """
+from sys import stderr
 from typing import Tuple, List
 
+import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
-import en_core_web_sm
+
+
+try:
+    nlp = spacy.load('en_core_web_sm')
+except OSError:
+    print('Downloading language model for the spaCy', file=stderr)
+    from spacy.cli import download
+    download('en_core_web_sm')
+    nlp = spacy.load('en_core_web_sm')
+
 
 __all__ = ("TextMatcher", "Tokenizer")
 
@@ -18,15 +29,13 @@ class Tokenizer:
     Creates a callable object for tokenizing input data based on the
     SpaCy library. """
 
-    nlp = en_core_web_sm.load()
-
     def __call__(self, text: str) -> List[str]:
         """ Callable object for tokenizing text.
         @param text: String of text to be tokenized
         @return: List of tokens as strings derived from SpaCy lemmatization.
         Common stop words are removed and punctuation is ignored. """
         return [
-            token.lemma_ for token in self.nlp(text)
+            token.lemma_ for token in nlp(text)
             if not token.is_stop and not token.is_punct
         ]
 
